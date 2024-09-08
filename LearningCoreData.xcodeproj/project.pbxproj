@@ -11,8 +11,8 @@
 		1F68CFD72C8D8AD900B82689 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFD62C8D8AD900B82689 /* ContentView.swift */; };
 		1F68CFD92C8D8ADA00B82689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F68CFD82C8D8ADA00B82689 /* Assets.xcassets */; };
 		1F68CFDC2C8D8ADA00B82689 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F68CFDB2C8D8ADA00B82689 /* Preview Assets.xcassets */; };
-		1F68CFDE2C8D8ADA00B82689 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFDD2C8D8ADA00B82689 /* Persistence.swift */; };
-		1F68CFE12C8D8ADA00B82689 /* LearningCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFDF2C8D8ADA00B82689 /* LearningCoreData.xcdatamodeld */; };
+		1F68CFDE2C8D8ADA00B82689 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFDD2C8D8ADA00B82689 /* CoreDataManager.swift */; };
+		1F68CFE12C8D8ADA00B82689 /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFDF2C8D8ADA00B82689 /* TaskModel.xcdatamodeld */; };
 		1F68CFEB2C8D8ADB00B82689 /* LearningCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFEA2C8D8ADB00B82689 /* LearningCoreDataTests.swift */; };
 		1F68CFF52C8D8ADB00B82689 /* LearningCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFF42C8D8ADB00B82689 /* LearningCoreDataUITests.swift */; };
 		1F68CFF72C8D8ADB00B82689 /* LearningCoreDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68CFF62C8D8ADB00B82689 /* LearningCoreDataUITestsLaunchTests.swift */; };
@@ -41,7 +41,7 @@
 		1F68CFD62C8D8AD900B82689 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1F68CFD82C8D8ADA00B82689 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F68CFDB2C8D8ADA00B82689 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1F68CFDD2C8D8ADA00B82689 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1F68CFDD2C8D8ADA00B82689 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		1F68CFE02C8D8ADA00B82689 /* LearningCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearningCoreData.xcdatamodel; sourceTree = "<group>"; };
 		1F68CFE62C8D8ADB00B82689 /* LearningCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F68CFEA2C8D8ADB00B82689 /* LearningCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningCoreDataTests.swift; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 				1F68CFD42C8D8AD900B82689 /* LearningCoreDataApp.swift */,
 				1F68CFD62C8D8AD900B82689 /* ContentView.swift */,
 				1F68CFD82C8D8ADA00B82689 /* Assets.xcassets */,
-				1F68CFDD2C8D8ADA00B82689 /* Persistence.swift */,
-				1F68CFDF2C8D8ADA00B82689 /* LearningCoreData.xcdatamodeld */,
+				1F68CFDD2C8D8ADA00B82689 /* CoreDataManager.swift */,
+				1F68CFDF2C8D8ADA00B82689 /* TaskModel.xcdatamodeld */,
 				1F68CFDA2C8D8ADA00B82689 /* Preview Content */,
 			);
 			path = LearningCoreData;
@@ -263,8 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F68CFE12C8D8ADA00B82689 /* LearningCoreData.xcdatamodeld in Sources */,
-				1F68CFDE2C8D8ADA00B82689 /* Persistence.swift in Sources */,
+				1F68CFE12C8D8ADA00B82689 /* TaskModel.xcdatamodeld in Sources */,
+				1F68CFDE2C8D8ADA00B82689 /* CoreDataManager.swift in Sources */,
 				1F68CFD72C8D8AD900B82689 /* ContentView.swift in Sources */,
 				1F68CFD52C8D8AD900B82689 /* LearningCoreDataApp.swift in Sources */,
 			);
@@ -438,6 +438,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +468,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,13 +600,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1F68CFDF2C8D8ADA00B82689 /* LearningCoreData.xcdatamodeld */ = {
+		1F68CFDF2C8D8ADA00B82689 /* TaskModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				1F68CFE02C8D8ADA00B82689 /* LearningCoreData.xcdatamodel */,
 			);
 			currentVersion = 1F68CFE02C8D8ADA00B82689 /* LearningCoreData.xcdatamodel */;
-			path = LearningCoreData.xcdatamodeld;
+			path = TaskModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

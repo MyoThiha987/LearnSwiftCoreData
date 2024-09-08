@@ -12,7 +12,7 @@ class CoreDataStack{
     let persistanceContainer : NSPersistentContainer
     
     private init(){
-        persistanceContainer = NSPersistentContainer(name: "LearningCoreData")
+        persistanceContainer = NSPersistentContainer(name: "TaskModel")
         persistanceContainer.loadPersistentStores { description, error in
             if let error = error{
                 fatalError("Unable to initialize CoreData \(error) ")
